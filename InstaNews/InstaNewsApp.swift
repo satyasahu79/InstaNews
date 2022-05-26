@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct InstaNewsApp: App {
+    
+    @StateObject var model = Model()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(model)
         }
     }
 }
