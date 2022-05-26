@@ -20,10 +20,10 @@ struct TabItem : Identifiable   {
 }
 
 var tabItems = [
-    TabItem(text: "Home", icon: "house",tab: .home,color: .teal),
-    TabItem(text: "Explore", icon: "magnifyingglass",tab: .explore,color: .blue),
-    TabItem(text: "Bookmarks", icon: "bookmark",tab: .bookmarks, color: .red),
-    TabItem(text: "Profile", icon: "person.crop.circle",tab: .profile, color: .purple)
+    TabItem(text: "Home", icon: "house",tab: .home,color: .cyan),
+    TabItem(text: "Explore", icon: "magnifyingglass",tab: .explore,color: .orange),
+    TabItem(text: "Bookmarks", icon: "bookmark",tab: .bookmarks, color: .blue),
+    TabItem(text: "Profile", icon: "person.crop.circle",tab: .profile, color: .green)
 ]
 
 
