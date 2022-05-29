@@ -36,7 +36,7 @@ struct HomeView: View {
             })
             .overlay(
                 NavigationBar(title: "Featured", hasScrolled: $hasScrolled)
-        )
+            )
         }
         .statusBar(hidden: !showsStatusBar)
         .onChange(of: show) { newValue in
@@ -50,9 +50,9 @@ struct HomeView: View {
             }
             
         }
-    
-    
-    
+        
+        
+        
     }
     
     

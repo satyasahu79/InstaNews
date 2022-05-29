@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A46CB5A284086AD0056CC7A /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A46CB59284086AB0056CC7A /* Articles.swift */; };
+		8A46CB5C284087290056CC7A /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A46CB5B284087290056CC7A /* Courses.swift */; };
+		8A46CB5F28428C0A0056CC7A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A46CB5E28428C0A0056CC7A /* OnboardingView.swift */; };
+		8A46CB6128428CE30056CC7A /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A46CB6028428CE30056CC7A /* BlurView.swift */; };
 		8A99CF0C283F9AD5002BE2D1 /* InstaNewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A99CF0B283F9AD5002BE2D1 /* InstaNewsApp.swift */; };
 		8A99CF0E283F9AD5002BE2D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A99CF0D283F9AD5002BE2D1 /* ContentView.swift */; };
 		8A99CF10283F9AD8002BE2D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A99CF0F283F9AD8002BE2D1 /* Assets.xcassets */; };
@@ -26,6 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A46CB59284086AB0056CC7A /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
+		8A46CB5B284087290056CC7A /* Courses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
+		8A46CB5E28428C0A0056CC7A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		8A46CB6028428CE30056CC7A /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		8A99CF08283F9AD5002BE2D1 /* InstaNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A99CF0B283F9AD5002BE2D1 /* InstaNewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaNewsApp.swift; sourceTree = "<group>"; };
 		8A99CF0D283F9AD5002BE2D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A46CB5D284087350056CC7A /* Temp */ = {
+			isa = PBXGroup;
+			children = (
+				8A46CB5B284087290056CC7A /* Courses.swift */,
+			);
+			path = Temp;
+			sourceTree = "<group>";
+		};
 		8A99CEFF283F9AD5002BE2D1 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +96,7 @@
 				8A99CF1F283F9C71002BE2D1 /* Components */,
 				8A99CF1E283F9C62002BE2D1 /* ViewModel */,
 				8A99CF1D283F9C5A002BE2D1 /* Model */,
+				8A46CB5D284087350056CC7A /* Temp */,
 				8A99CF19283F9C0B002BE2D1 /* Navigation */,
 				8A99CF1C283F9C54002BE2D1 /* Styles */,
 				8A99CF0F283F9AD8002BE2D1 /* Assets.xcassets */,
@@ -119,6 +136,7 @@
 		8A99CF1D283F9C5A002BE2D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8A46CB59284086AB0056CC7A /* Articles.swift */,
 				8A99CF22283F9CD4002BE2D1 /* Tab.swift */,
 				8A99CF24283F9D01002BE2D1 /* PreferenceKeys.swift */,
 				8A99CF26283F9D19002BE2D1 /* Model.swift */,
@@ -136,6 +154,7 @@
 		8A99CF1F283F9C71002BE2D1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8A46CB6028428CE30056CC7A /* BlurView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -147,6 +166,7 @@
 				8A99CF2B283F9E0A002BE2D1 /* ExploreView.swift */,
 				8A99CF2D283F9E17002BE2D1 /* BookmarksView.swift */,
 				8A99CF2F283F9E1F002BE2D1 /* ProfileView.swift */,
+				8A46CB5E28428C0A0056CC7A /* OnboardingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -222,9 +242,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A99CF27283F9D19002BE2D1 /* Model.swift in Sources */,
+				8A46CB5A284086AD0056CC7A /* Articles.swift in Sources */,
 				8A99CF2C283F9E0A002BE2D1 /* ExploreView.swift in Sources */,
 				8A99CF32283FA5EA002BE2D1 /* Animations.swift in Sources */,
 				8A99CF1B283F9C22002BE2D1 /* TabBar.swift in Sources */,
+				8A46CB6128428CE30056CC7A /* BlurView.swift in Sources */,
 				8A99CF0E283F9AD5002BE2D1 /* ContentView.swift in Sources */,
 				8A99CF23283F9CD4002BE2D1 /* Tab.swift in Sources */,
 				8A99CF0C283F9AD5002BE2D1 /* InstaNewsApp.swift in Sources */,
@@ -232,8 +254,10 @@
 				8A99CF25283F9D01002BE2D1 /* PreferenceKeys.swift in Sources */,
 				8A99CF2E283F9E17002BE2D1 /* BookmarksView.swift in Sources */,
 				8A99CF30283F9E1F002BE2D1 /* ProfileView.swift in Sources */,
+				8A46CB5C284087290056CC7A /* Courses.swift in Sources */,
 				8A99CF36283FA659002BE2D1 /* NavigationBar.swift in Sources */,
 				8A99CF21283F9C9B002BE2D1 /* Styles.swift in Sources */,
+				8A46CB5F28428C0A0056CC7A /* OnboardingView.swift in Sources */,
 				8A99CF34283FA60F002BE2D1 /* AnimatableFontModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,6 +395,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -400,6 +425,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
