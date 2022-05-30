@@ -74,10 +74,10 @@ struct BlurView: View {
                 Circle()
                     .fill(Color("Blur3-c1"))
                 //                                            .fill(.black)
-                    .blur(radius: 100)
-                    .frame(width: 251.5, height: 251.5)
+                    .blur(radius: 120)
+                    .frame(width: 351.5, height: 351.5)
                     .rotationEffect(.degrees(105))
-                    .offset(x:-50,y: -1020)
+                    .offset(x:-50,y: -1000)
                     .zIndex(3)
                 
                 
@@ -85,7 +85,7 @@ struct BlurView: View {
                     .fill(.red)
                 //                    .fill(.green)
                     .blur(radius: 100)
-                    .frame(width: 244.1, height: 244.1)
+                    .frame(width: 294.1, height: 294.1)
                     .rotationEffect(.degrees(605))
                     .offset(x: -180,y:-1300)
                     .zIndex(2)
@@ -120,7 +120,7 @@ struct BlurView: View {
                     .zIndex(0)
                  
             }
-            
+//
             .frame(width: 470, height: 443)
             .offset(x:70, y: 800)
 //            .scaleEffect(0.5)
@@ -130,7 +130,7 @@ struct BlurView: View {
             
         }.onAppear{
             
-            withAnimation(.linear(duration: 30).repeatForever(autoreverses: false)) {
+            withAnimation(.linear(duration: 20).repeatForever(autoreverses: false)) {
                 appear = true
             }
             

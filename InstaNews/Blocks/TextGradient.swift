@@ -9,10 +9,12 @@ import SwiftUI
 
 struct TextGradient: View {
     
+    var title : String = ""
+    
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
-        Text("Let's find the\ninportant things here.")
+        Text(title)
             .font(.title.weight(.bold))
             .opacity(1.8)
             .foregroundStyle(LinearGradient(

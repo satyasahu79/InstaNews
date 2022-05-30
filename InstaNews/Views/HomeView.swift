@@ -12,9 +12,7 @@ struct HomeView: View {
     @State var hasScrolled = false
     @State var show = false
     @State var showsStatusBar : Bool = true
-    
-    
-    
+
     var article : [Article] = articles
     
     var body: some View {
@@ -30,7 +28,7 @@ struct HomeView: View {
                 
                 scrollDetection
                 
-                TextGradient()
+                TextGradient(title: "Let's find the\ninportant things here.")
                 
                 SmallHeadline(title: "Trending")
                     .padding(.bottom)
@@ -51,6 +49,7 @@ struct HomeView: View {
                 ForEach(article) { item in
                     ArticleCardView(article: item)
                         .padding(.horizontal)
+                        .padding(.top,4)
                     Divider()
                 }
                 
@@ -103,11 +102,3 @@ struct HomeView_Previews: PreviewProvider {
            
     }
 }
-
-
-
-
-
-
-
-

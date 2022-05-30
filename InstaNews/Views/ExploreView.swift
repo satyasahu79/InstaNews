@@ -8,8 +8,44 @@
 import SwiftUI
 
 struct ExploreView: View {
+    
+    var article : [Article] = articles
+    
+    
     var body: some View {
-        Text("Explore View")
+        
+        NavigationView {
+            ZStack {
+                
+                Color("Background").ignoresSafeArea()
+                BackgroundBlob()
+                
+                ScrollView(.vertical, showsIndicators: false) {
+                    
+                    VStack {
+                        
+                        Color.clear
+                            .frame(height : 16)
+                        
+                        ForEach(article) { item in
+                            
+                            SmallHeadline(title: item.group)
+                                .padding(.top,4)
+                            ArticleCardView(article: item)
+                                .padding(.horizontal)
+                            Divider()
+                            
+                        }
+                        
+                    }
+                    
+                }
+               
+                
+            }
+            
+            .navigationTitle("Explore")
+        }
     }
 }
 
@@ -18,3 +54,5 @@ struct ExploreView_Previews: PreviewProvider {
         ExploreView()
     }
 }
+
+

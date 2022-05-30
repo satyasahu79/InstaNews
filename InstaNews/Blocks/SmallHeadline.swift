@@ -15,7 +15,7 @@ struct SmallHeadline: View {
             .font(.footnote.weight(.semibold))
             .foregroundColor(.secondary)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal, 20)
+            .padding(.horizontal, 16)
     }
 }
 

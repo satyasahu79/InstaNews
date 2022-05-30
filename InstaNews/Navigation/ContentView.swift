@@ -24,7 +24,7 @@ struct ContentView: View {
             case .bookmarks:
                 BookmarksView()
             case .profile:
-                ProfileView()
+                OnboardingView()
             }
             
             TabBar()
