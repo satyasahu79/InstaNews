@@ -24,12 +24,8 @@ struct OnboardingView: View {
                     .fontWeight(.bold)
                     .blendMode(.overlay)
                     .padding(.top,150)
-                    
-                  
-                    
-                    
+                 
                 Spacer()
-                
                 
                 Text("You can fill your spare time by reading thousands of the latest news that we provide.")
                     .font(.headline)
