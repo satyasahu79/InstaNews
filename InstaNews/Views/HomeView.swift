@@ -36,11 +36,8 @@ struct HomeView: View {
                 
                 TextGradient()
                 
-                Text("Trending".uppercased())
-                    .font(.footnote.weight(.semibold))
-                    .foregroundColor(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal, 20)
+                SmallHeadline(title: "Trending")
+                    .padding(.bottom)
                 
                 
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -50,10 +47,16 @@ struct HomeView: View {
                         }
                     }
                 }
-//                .padding(.leading)
-//                .padding(.top)
-//                .offset(x: 16)
+                .padding(.bottom)
+
+                SmallHeadline(title: "Newest")
+                    .padding(.vertical)
                 
+                ForEach(article) { item in
+                    ArticleCardView(article: item)
+                        .padding(.horizontal)
+                    Divider()
+                }
                 
                 
             }
@@ -76,10 +79,6 @@ struct HomeView: View {
                 }
             }
         }
-        
-        
-        
-        
     }
     
     
@@ -100,7 +99,6 @@ struct HomeView: View {
         })
     }
     
-    
 }
 
 struct HomeView_Previews: PreviewProvider {
@@ -112,22 +110,6 @@ struct HomeView_Previews: PreviewProvider {
 
 
 
-struct TextGradient: View {
-    
-    @Environment(\.colorScheme) var colorScheme
-    
-    var body: some View {
-        Text("Let's find the\ninportant things here.")
-            .font(.title.weight(.bold))
-            .opacity(1.8)
-            .foregroundStyle(LinearGradient(
-                gradient: Gradient(stops: [
-                    .init(color: colorScheme == .dark ?  Color(#colorLiteral(red: 0.2666666806, green: 0.2352941185, blue: 0.6588235497, alpha: 1)) : .black, location: 0),
-                    .init(color: colorScheme == .dark ? Color(#colorLiteral(red: 0.3137255012989044, green: 0.24705882370471954, blue: 0.8588235378265381, alpha: 1)) : .black.opacity(0.5), location: 1)]),
-                startPoint: UnitPoint(x: 4.440892098500626e-16, y: 4.996003610813204e-16),
-                endPoint: UnitPoint(x: 1.0000000000000004, y: 1.0000000000000004)))
-            .frame(maxWidth : .infinity,alignment: .leading)
-            .padding(.trailing)
-            .padding()
-    }
-}
+
+
+
