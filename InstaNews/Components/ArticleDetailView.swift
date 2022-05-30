@@ -11,6 +11,8 @@ struct ArticleDetailView: View {
     
     var article : Article
     
+    
+    
     var body: some View {
         ZStack{
             Color("Background").ignoresSafeArea()
@@ -82,7 +84,7 @@ struct ArticleDetailView: View {
                         HStack(alignment: .center, spacing: 16.0) {
                             
                             ForEach(article.category,id: \.self) { item in
-                                ExtractedView(text: item)
+                                Categories(text: item)
                                 //                            .frame(maxWidth :200)
                                     .lineLimit(1)
                                 
@@ -157,19 +159,22 @@ struct ArticleDetailView: View {
 struct ArticleDetailView_Previews: PreviewProvider {
     static var previews: some View {
         ArticleDetailView(article: articles[0])
-            .preferredColorScheme(.dark)
+//            .preferredColorScheme(.dark)
     }
 }
 
-struct ExtractedView: View {
+struct Categories: View {
+    
+    @Environment(\.colorScheme) var colorScheme
     var text : String
+    
     var body: some View {
         Button(action: {}) {
             Text(text)
                 .padding(.all,4)
-                .opacity(0.75)
+                .opacity(colorScheme == .dark ? 0.75 : 1)
         }
-        .tint(.indigo.opacity(0.25))
+        .tint(.indigo.opacity(colorScheme == .dark ? 0.25 : 0.75))
         .buttonStyle(.borderedProminent)
         .buttonBorderShape(.capsule)
         .controlSize(.small)
