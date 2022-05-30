@@ -11,11 +11,11 @@
 		8A2D4F7528451C7D003675AE /* LobsterTwo-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A2D4F7128451C7D003675AE /* LobsterTwo-Italic.ttf */; };
 		8A2D4F7628451C7D003675AE /* LobsterTwo-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A2D4F7228451C7D003675AE /* LobsterTwo-BoldItalic.ttf */; };
 		8A2D4F7728451C7D003675AE /* LobsterTwo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A2D4F7328451C7D003675AE /* LobsterTwo-Regular.ttf */; };
+		8A2D4F7A2845234A003675AE /* TrendingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2D4F792845234A003675AE /* TrendingCard.swift */; };
 		8A46CB5A284086AD0056CC7A /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A46CB59284086AB0056CC7A /* Articles.swift */; };
 		8A46CB5C284087290056CC7A /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A46CB5B284087290056CC7A /* Courses.swift */; };
 		8A46CB5F28428C0A0056CC7A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A46CB5E28428C0A0056CC7A /* OnboardingView.swift */; };
 		8A46CB6128428CE30056CC7A /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A46CB6028428CE30056CC7A /* BlurView.swift */; };
-		8A46CB632843F0CC0056CC7A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A46CB622843F0CC0056CC7A /* SearchView.swift */; };
 		8A99CF0C283F9AD5002BE2D1 /* InstaNewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A99CF0B283F9AD5002BE2D1 /* InstaNewsApp.swift */; };
 		8A99CF0E283F9AD5002BE2D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A99CF0D283F9AD5002BE2D1 /* ContentView.swift */; };
 		8A99CF10283F9AD8002BE2D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A99CF0F283F9AD8002BE2D1 /* Assets.xcassets */; };
@@ -40,11 +40,11 @@
 		8A2D4F7228451C7D003675AE /* LobsterTwo-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-BoldItalic.ttf"; sourceTree = "<group>"; };
 		8A2D4F7328451C7D003675AE /* LobsterTwo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-Regular.ttf"; sourceTree = "<group>"; };
 		8A2D4F7828451FF6003675AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8A2D4F792845234A003675AE /* TrendingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCard.swift; sourceTree = "<group>"; };
 		8A46CB59284086AB0056CC7A /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
 		8A46CB5B284087290056CC7A /* Courses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
 		8A46CB5E28428C0A0056CC7A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		8A46CB6028428CE30056CC7A /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
-		8A46CB622843F0CC0056CC7A /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		8A99CF08283F9AD5002BE2D1 /* InstaNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A99CF0B283F9AD5002BE2D1 /* InstaNewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaNewsApp.swift; sourceTree = "<group>"; };
 		8A99CF0D283F9AD5002BE2D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,10 +119,10 @@
 				8A99CF1F283F9C71002BE2D1 /* Components */,
 				8A99CF1E283F9C62002BE2D1 /* ViewModel */,
 				8A99CF1D283F9C5A002BE2D1 /* Model */,
-				8A2D4F6F28451C6E003675AE /* Fonts */,
 				8A46CB5D284087350056CC7A /* Temp */,
 				8A99CF19283F9C0B002BE2D1 /* Navigation */,
 				8A99CF1C283F9C54002BE2D1 /* Styles */,
+				8A2D4F6F28451C6E003675AE /* Fonts */,
 				8A99CF0F283F9AD8002BE2D1 /* Assets.xcassets */,
 				8A99CF11283F9AD8002BE2D1 /* Preview Content */,
 			);
@@ -179,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				8A46CB6028428CE30056CC7A /* BlurView.swift */,
-				8A46CB622843F0CC0056CC7A /* SearchView.swift */,
+				8A2D4F792845234A003675AE /* TrendingCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -271,7 +271,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A99CF27283F9D19002BE2D1 /* Model.swift in Sources */,
-				8A46CB632843F0CC0056CC7A /* SearchView.swift in Sources */,
 				8A46CB5A284086AD0056CC7A /* Articles.swift in Sources */,
 				8A99CF2C283F9E0A002BE2D1 /* ExploreView.swift in Sources */,
 				8A99CF32283FA5EA002BE2D1 /* Animations.swift in Sources */,
@@ -281,6 +280,7 @@
 				8A99CF23283F9CD4002BE2D1 /* Tab.swift in Sources */,
 				8A99CF0C283F9AD5002BE2D1 /* InstaNewsApp.swift in Sources */,
 				8A99CF2A283F9DF9002BE2D1 /* HomeView.swift in Sources */,
+				8A2D4F7A2845234A003675AE /* TrendingCard.swift in Sources */,
 				8A99CF25283F9D01002BE2D1 /* PreferenceKeys.swift in Sources */,
 				8A99CF2E283F9E17002BE2D1 /* BookmarksView.swift in Sources */,
 				8A99CF30283F9E1F002BE2D1 /* ProfileView.swift in Sources */,

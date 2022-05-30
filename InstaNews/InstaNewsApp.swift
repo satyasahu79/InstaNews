@@ -14,8 +14,8 @@ struct InstaNewsApp: App {
     
     var body: some Scene {
         WindowGroup {
-            OnboardingView()
-            //            ContentView()
+//            OnboardingView()
+                        ContentView()
                 .environmentObject(model)
         }
     }

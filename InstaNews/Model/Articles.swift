@@ -10,9 +10,11 @@ import Foundation
 struct Article : Identifiable    {
     let id = UUID()
     var title : String
-    var subtitle : String
     var image : String
-    var category : String
+    var date : String
+    var category : [String]
+    var group : String
+    var views : Int
     var writer : String
     var publisher : String
     var publisherImage : String
@@ -21,5 +23,27 @@ struct Article : Identifiable    {
 }
 
 var articles : [Article] = [
-    Article(title: "This is a test", subtitle: "This is the test Subtitle", image: "illustration 1", category: "Education", writer: "Satya Prakash Sahu", publisher: "Indian Express", publisherImage: "Indian Express", writerImage: "Amrita Dev", body: "This is the body of the article.")
+    Article(title: "Travel Article", image: "articleImage2", date:"14 June 2021" , category: ["Travelling", "Holiday", "Trip Advice"], group: "Travel", views: Int.random(in: 100...9999), writer: "Jane Cooper", publisher: "Abstergo Ltd.", publisherImage: "publisherImage1", writerImage: "writerImage1", body: "The third largest Hawaiian island is home to the majority of Hawaii’s diverse population, a fusion of East and West cultures rooted in the values and traditions of the Native Hawaiian people.\n\nIt’s this fundamental contrast between the ancient and the modern that makes discovering Oahu — from bustling city life to laidback surf towns — so enjoyable"),
+    
+    Article(title: "Education Article", image: "articleImage1", date:"14 June 2021" , category: ["Travelling", "Holiday", "Trip Advice"], group: "Education", views: Int.random(in: 100...9999), writer: "Jane Cooper", publisher: "Abstergo Ltd.", publisherImage: "publisherImage1", writerImage: "writerImage1", body: "The third largest Hawaiian island is home to the majority of Hawaii’s diverse population, a fusion of East and West cultures rooted in the values and traditions of the Native Hawaiian people.\n\nIt’s this fundamental contrast between the ancient and the modern that makes discovering Oahu — from bustling city life to laidback surf towns — so enjoyable"),
+    
+    Article(title: "Political Article", image: "articleImage1", date:"14 June 2021" , category: ["Travelling", "Holiday", "Trip Advice"], group: "Politics", views: Int.random(in: 100...9999), writer: "Jane Cooper", publisher: "Abstergo Ltd.", publisherImage: "publisherImage1", writerImage: "writerImage1", body: "The third largest Hawaiian island is home to the majority of Hawaii’s diverse population, a fusion of East and West cultures rooted in the values and traditions of the Native Hawaiian people.\n\nIt’s this fundamental contrast between the ancient and the modern that makes discovering Oahu — from bustling city life to laidback surf towns — so enjoyable"),
+    
+    Article(title: "Entertainment Article", image: "articleImage1", date:"14 June 2021" , category: ["Travelling", "Holiday", "Trip Advice"], group: "Entertainment", views: Int.random(in: 100...9999), writer: "Jane Cooper", publisher: "Abstergo Ltd.", publisherImage: "publisherImage1", writerImage: "writerImage1", body: "The third largest Hawaiian island is home to the majority of Hawaii’s diverse population, a fusion of East and West cultures rooted in the values and traditions of the Native Hawaiian people.\n\nIt’s this fundamental contrast between the ancient and the modern that makes discovering Oahu — from bustling city life to laidback surf towns — so enjoyable")
 ]
+
+var travelArticles = articles.filter { article in
+    article.group == "Travel"
+}
+
+var politicalArticles = articles.filter { article in
+    article.group == "Politics"
+}
+
+var educationalArticles = articles.filter { article in
+    article.group == "Education"
+}
+
+var entertainmentArticles = articles.filter { article in
+    article.group == "Entertainment"
+}

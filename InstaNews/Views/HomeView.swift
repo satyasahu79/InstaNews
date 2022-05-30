@@ -13,9 +13,11 @@ struct HomeView: View {
     @State var show = false
     @State var showsStatusBar : Bool = true
     
+    
+    
+    var article : [Article] = articles
+    
     var body: some View {
-        
-        
         
         ZStack {
             
@@ -31,8 +33,28 @@ struct HomeView: View {
             ScrollView(showsIndicators: false)  {
                 
                 scrollDetection
-
+                
                 TextGradient()
+                
+                Text("Trending".uppercased())
+                    .font(.footnote.weight(.semibold))
+                    .foregroundColor(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 20)
+                
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(alignment:.top , spacing: 0) {
+                        ForEach(article) { item in
+                            TrendingCard(article: item)
+                        }
+                    }
+                }
+//                .padding(.leading)
+//                .padding(.top)
+//                .offset(x: 16)
+                
+                
                 
             }
             .coordinateSpace(name: "scroll")
@@ -42,7 +64,8 @@ struct HomeView: View {
             .overlay(
                 NavigationBar(title: "Insta News", hasScrolled: $hasScrolled)
             )
-        }
+            
+        }   // ZStack Ends
         .statusBar(hidden: !showsStatusBar)
         .onChange(of: show) { newValue in
             withAnimation(.closeCard) {
@@ -51,10 +74,9 @@ struct HomeView: View {
                 }   else {
                     showsStatusBar = true
                 }
-                
             }
-            
         }
+        
         
         
         
@@ -84,19 +106,24 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .preferredColorScheme(.dark)
+           
     }
 }
 
+
+
 struct TextGradient: View {
+    
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         Text("Let's find the\ninportant things here.")
             .font(.title.weight(.bold))
             .opacity(1.8)
             .foregroundStyle(LinearGradient(
                 gradient: Gradient(stops: [
-                    .init(color: Color(#colorLiteral(red: 0.2666666806, green: 0.2352941185, blue: 0.6588235497, alpha: 1)), location: 0),
-                    .init(color: Color(#colorLiteral(red: 0.3137255012989044, green: 0.24705882370471954, blue: 0.8588235378265381, alpha: 1)), location: 1)]),
+                    .init(color: colorScheme == .dark ?  Color(#colorLiteral(red: 0.2666666806, green: 0.2352941185, blue: 0.6588235497, alpha: 1)) : .black, location: 0),
+                    .init(color: colorScheme == .dark ? Color(#colorLiteral(red: 0.3137255012989044, green: 0.24705882370471954, blue: 0.8588235378265381, alpha: 1)) : .black.opacity(0.5), location: 1)]),
                 startPoint: UnitPoint(x: 4.440892098500626e-16, y: 4.996003610813204e-16),
                 endPoint: UnitPoint(x: 1.0000000000000004, y: 1.0000000000000004)))
             .frame(maxWidth : .infinity,alignment: .leading)
