@@ -16,6 +16,7 @@
 		8A46CB5C284087290056CC7A /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A46CB5B284087290056CC7A /* Courses.swift */; };
 		8A46CB5F28428C0A0056CC7A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A46CB5E28428C0A0056CC7A /* OnboardingView.swift */; };
 		8A46CB6128428CE30056CC7A /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A46CB6028428CE30056CC7A /* BlurView.swift */; };
+		8A569F0A28462EB600E415BD /* UserComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A569F0928462EB600E415BD /* UserComments.swift */; };
 		8A99CF0C283F9AD5002BE2D1 /* InstaNewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A99CF0B283F9AD5002BE2D1 /* InstaNewsApp.swift */; };
 		8A99CF0E283F9AD5002BE2D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A99CF0D283F9AD5002BE2D1 /* ContentView.swift */; };
 		8A99CF10283F9AD8002BE2D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A99CF0F283F9AD8002BE2D1 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		8A46CB5B284087290056CC7A /* Courses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
 		8A46CB5E28428C0A0056CC7A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		8A46CB6028428CE30056CC7A /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		8A569F0928462EB600E415BD /* UserComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserComments.swift; sourceTree = "<group>"; };
 		8A99CF08283F9AD5002BE2D1 /* InstaNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A99CF0B283F9AD5002BE2D1 /* InstaNewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaNewsApp.swift; sourceTree = "<group>"; };
 		8A99CF0D283F9AD5002BE2D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				8A2D4F792845234A003675AE /* TrendingCard.swift */,
 				8ABEB25D28454A5100A3BB4F /* ArticleCardView.swift */,
 				8ABEB26628457A1B00A3BB4F /* ArticleDetailView.swift */,
+				8A569F0928462EB600E415BD /* UserComments.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				8A2D4F7A2845234A003675AE /* TrendingCard.swift in Sources */,
 				8ABEB26728457A1B00A3BB4F /* ArticleDetailView.swift in Sources */,
 				8A99CF25283F9D01002BE2D1 /* PreferenceKeys.swift in Sources */,
+				8A569F0A28462EB600E415BD /* UserComments.swift in Sources */,
 				8A99CF2E283F9E17002BE2D1 /* BookmarksView.swift in Sources */,
 				8ABEB2622845594A00A3BB4F /* TextGradient.swift in Sources */,
 				8A99CF30283F9E1F002BE2D1 /* ProfileView.swift in Sources */,

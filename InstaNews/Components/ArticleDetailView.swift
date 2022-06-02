@@ -59,7 +59,9 @@ struct ArticleDetailView: View {
                         
                         
                         Text(article.title)
-                            .font(.title2)
+                            .font(.title2.weight(.semibold))
+                        
+                        
                         
                         HStack(spacing : 4){
                             Image(article.publisherImage)
