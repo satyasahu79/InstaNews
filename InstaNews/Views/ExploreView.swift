@@ -23,13 +23,14 @@ struct ExploreView: View {
                 
                 ScrollView(.vertical, showsIndicators: false) {
                     
-                    VStack {
+                    VStack(alignment: .leading) {
                         
                         Color.clear
                             .frame(height : 16)
                         
                         
                         ForEach(articleGroups,id: \.self) { articleGroup in
+                            
                             SmallHeadline(title: articleGroup)
                                 .padding(.top,4)
                                 
@@ -38,11 +39,18 @@ struct ExploreView: View {
                             
                             ForEach(article) { item in
                         
-                                if articleGroup == item.group {
-                                    ArticleCardView(article: item)
-                                        .padding(.horizontal)
-                                    .padding(.bottom)
-                                }
+                                NavigationLink {
+                                    ArticleDetailView(article: item)
+                                } label: {
+                                    if articleGroup == item.group {
+                                        ArticleCardView(article: item)
+                                            .padding(.horizontal)
+                                        .padding(.bottom)
+                                        
+                                    }
+                                }.frame(alignment:.leading)
+
+                                
 //                                    else {
 //                                    Text("Currently no Articles Are present in \(articleGroup)")
 //                                }

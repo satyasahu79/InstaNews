@@ -15,69 +15,87 @@ struct HomeView: View {
     @State var showsStatusBar : Bool = true
     
     @EnvironmentObject var articleViewModel : ArticleViewModel
-
+    
     var article : [Article]
     
     var body: some View {
         
-        ZStack {
-            
-            Color("Background").ignoresSafeArea()
-            
-            BackgroundBlob()
-            
-            
-            ScrollView(showsIndicators: false)  {
+        NavigationView {
+            ZStack {
                 
-                scrollDetection
+                Color("Background").ignoresSafeArea()
                 
-                TextGradient(title: "Let's find the\ninportant things here.")
-                
-                SmallHeadline(title: "Trending")
-                    .padding(.bottom)
+                BackgroundBlob()
                 
                 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(alignment:.top , spacing: 0) {
-                        ForEach(article) { item in
-                            if item.isTrending {
-                                TrendingCard(article: item)
+                ScrollView(showsIndicators: false)  {
+                    
+                    scrollDetection
+                    
+                    TextGradient(title: "Let's find the\ninportant things here.")
+                    
+                    SmallHeadline(title: "Trending")
+                        .padding(.bottom)
+                    
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(alignment:.top , spacing: 0) {
+                            ForEach(article) { item in
+                                if item.isTrending {
+                                    NavigationLink {
+                                        ArticleDetailView(article: item)
+                                    } label: {
+                                        TrendingCard(article: item)
+                                    }
+                                    
+                                    
+                                    
+                                }
+                                
                             }
-                            
                         }
                     }
+                    .padding(.bottom)
+                    
+                    SmallHeadline(title: "Newest")
+                        .padding(.vertical)
+                    
+                    ForEach(article) { item in
+                        
+                        NavigationLink {
+                            ArticleDetailView(article: item)
+                        } label: {
+                            ArticleCardView(article: item)
+                                .padding(.horizontal)
+                                .padding(.top,4)
+                        }
+                        
+                        
+                        Divider()
+                    }
+                    
+                    
                 }
-                .padding(.bottom)
-
-                SmallHeadline(title: "Newest")
-                    .padding(.vertical)
-                
-                ForEach(article) { item in
-                    ArticleCardView(article: item)
-                        .padding(.horizontal)
-                        .padding(.top,4)
-                    Divider()
+                .coordinateSpace(name: "scroll")
+                .safeAreaInset(edge: .top, content: {
+                    Color.clear.frame(height: 70)
+                })
+                .overlay(
+                    NavigationBar(title: "Insta News", hasScrolled: $hasScrolled)
+                )
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
+            }   // ZStack Ends
+            .statusBar(hidden: !showsStatusBar)
+            .onChange(of: show) { newValue in
+                withAnimation(.closeCard) {
+                    if newValue {
+                        showsStatusBar = false
+                    }   else {
+                        showsStatusBar = true
+                    }
                 }
-                
-                
-            }
-            .coordinateSpace(name: "scroll")
-            .safeAreaInset(edge: .top, content: {
-                Color.clear.frame(height: 70)
-            })
-            .overlay(
-                NavigationBar(title: "Insta News", hasScrolled: $hasScrolled)
-            )
-            
-        }   // ZStack Ends
-        .statusBar(hidden: !showsStatusBar)
-        .onChange(of: show) { newValue in
-            withAnimation(.closeCard) {
-                if newValue {
-                    showsStatusBar = false
-                }   else {
-                    showsStatusBar = true
-                }
+               
             }
         }
     }
@@ -106,6 +124,6 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView( article: [articlePreviewData])
             .environmentObject(ArticleViewModel())
-           
+        
     }
 }

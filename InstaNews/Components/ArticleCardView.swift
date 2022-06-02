@@ -18,10 +18,16 @@ struct ArticleCardView: View {
         HStack(alignment : .top) {
             
             VStack(alignment: .leading, spacing: 16) {
-                Text(article.title)
-                    .font(.headline.weight(.semibold))
-                    .lineLimit(2)
+               
+                HStack {
+                    Text(article.title)
+                        .foregroundColor(.primary)
+                        .font(.headline.weight(.semibold))
+                        .lineLimit(2)
                     .frame(alignment: .leading)
+                    Spacer()
+                }
+                
                 
                 HStack(spacing:16) {
                    
@@ -37,8 +43,10 @@ struct ArticleCardView: View {
                             image
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
+                                .foregroundColor(.primary)
                                 .frame(width: 22, height: 22, alignment: .center)
                                 .clipShape(Circle())
+                            
                                 
                         } placeholder: {
                             ProgressView()
@@ -47,6 +55,7 @@ struct ArticleCardView: View {
                         
                         Text(article.writer)
                         .fontWeight(.semibold)
+                        .foregroundColor(.primary)
                     }
                  
                     
@@ -54,13 +63,17 @@ struct ArticleCardView: View {
                         Image(systemName: "eye.fill")
                         Text("\(views)")
                             .fontWeight(.semibold)
+                            .foregroundColor(.primary)
                     }
                
                     HStack(spacing : 4) {
                         Image(systemName: "message.fill")
                         Text("\(noOfComments)")
                             .fontWeight(.semibold)
+                            .foregroundColor(.primary)
                     }
+                    
+                    
                     
                 }
                 .font(.footnote)
@@ -84,7 +97,7 @@ struct ArticleCardView: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 90, height: 90)
                     .mask(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                
+                    .foregroundColor(.primary)
             } placeholder: {
                 ProgressView()
             }

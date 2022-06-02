@@ -5,7 +5,6 @@
 //  Created by Satya Prakash Sahu on 26/05/22.
 //
 
-import SwiftUI
 
 import SwiftUI
 
@@ -17,6 +16,7 @@ struct ContentView: View {
     var body: some View {
         
         ZStack {
+            
             ZStack {
                 
                 switch selectedTab {
@@ -27,7 +27,7 @@ struct ContentView: View {
                 case .bookmarks:
                     BookmarksView()
                 case .profile:
-                    ProfileView()
+                    ProfileView1()
                 }
                 
                 TabBar()
@@ -41,6 +41,7 @@ struct ContentView: View {
                 await articleViewModel.fetch()
             }
         
+            OnboardingView()
         
         }   // Main ZStack Ends
     }

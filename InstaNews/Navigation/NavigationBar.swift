@@ -26,12 +26,12 @@ struct NavigationBar: View {
                 .offset(y: hasScrolled ? -4 : 0)
             
             HStack(spacing: 16) {
-                Image(systemName: "magnifyingglass")
-                    .font(.body.weight(.bold))
-                    .frame(width: 36, height: 36)
-                    .foregroundColor(.secondary)
-                    .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                    .strokeStyle(cornerRadius: 14)
+//                Image(systemName: "magnifyingglass")
+//                    .font(.body.weight(.bold))
+//                    .frame(width: 36, height: 36)
+//                    .foregroundColor(.secondary)
+//                    .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+//                    .strokeStyle(cornerRadius: 14)
                 
                 Image("Avatar Default")
                     .resizable()

@@ -10,7 +10,7 @@ import SwiftUI
 struct ArticleDetailView: View {
     
     var article : Article
-    var views : Int
+    var views = Int.random(in: 1000...5550)
     
     var body: some View {
         ZStack{
@@ -167,7 +167,8 @@ struct ArticleDetailView: View {
             
             
             
-            
+            .navigationBarTitle(article.title, displayMode: .inline)
+//            .navigationBarHidden(true)
         }
         
         
