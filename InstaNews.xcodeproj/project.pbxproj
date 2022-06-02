@@ -33,6 +33,8 @@
 		8A99CF32283FA5EA002BE2D1 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A99CF31283FA5EA002BE2D1 /* Animations.swift */; };
 		8A99CF34283FA60F002BE2D1 /* AnimatableFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A99CF33283FA60F002BE2D1 /* AnimatableFontModifier.swift */; };
 		8A99CF36283FA659002BE2D1 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A99CF35283FA659002BE2D1 /* NavigationBar.swift */; };
+		8ABB3FC42848DE46009582F6 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 8ABB3FC32848DE46009582F6 /* Apollo */; };
+		8ABB3FC72848E108009582F6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8ABB3FC62848E108009582F6 /* FirebaseAuth */; };
 		8ABEB25E28454A5200A3BB4F /* ArticleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABEB25D28454A5100A3BB4F /* ArticleCardView.swift */; };
 		8ABEB2602845591300A3BB4F /* SmallHeadline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABEB25F2845591300A3BB4F /* SmallHeadline.swift */; };
 		8ABEB2622845594A00A3BB4F /* TextGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABEB2612845594A00A3BB4F /* TextGradient.swift */; };
@@ -81,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ABB3FC42848DE46009582F6 /* Apollo in Frameworks */,
+				8ABB3FC72848E108009582F6 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +242,10 @@
 			dependencies = (
 			);
 			name = InstaNews;
+			packageProductDependencies = (
+				8ABB3FC32848DE46009582F6 /* Apollo */,
+				8ABB3FC62848E108009582F6 /* FirebaseAuth */,
+			);
 			productName = InstaNews;
 			productReference = 8A99CF08283F9AD5002BE2D1 /* InstaNews.app */;
 			productType = "com.apple.product-type.application";
@@ -266,6 +274,10 @@
 				Base,
 			);
 			mainGroup = 8A99CEFF283F9AD5002BE2D1;
+			packageReferences = (
+				8ABB3FC22848DE46009582F6 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				8ABB3FC52848E107009582F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 8A99CF09283F9AD5002BE2D1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -525,6 +537,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8ABB3FC22848DE46009582F6 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		8ABB3FC52848E107009582F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8ABB3FC32848DE46009582F6 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8ABB3FC22848DE46009582F6 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		8ABB3FC62848E108009582F6 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8ABB3FC52848E107009582F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8A99CF00283F9AD5002BE2D1 /* Project object */;
 }

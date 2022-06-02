@@ -11,6 +11,7 @@ struct ExploreView: View {
     
     var article : [Article] = articles
     
+    var articleGroups = ["Auto News","Bussiness News","Political News", "Personal Finance News","Tech News","Tech News","Travel News","Sports News"]
     
     var body: some View {
         
@@ -27,15 +28,34 @@ struct ExploreView: View {
                         Color.clear
                             .frame(height : 16)
                         
-                        ForEach(article) { item in
-                            
-                            SmallHeadline(title: item.group)
+                        
+                        ForEach(articleGroups,id: \.self) { articleGroup in
+                            SmallHeadline(title: articleGroup)
                                 .padding(.top,4)
-                            ArticleCardView(article: item)
-                                .padding(.horizontal)
+                                
                             Divider()
+                                .padding(.bottom,8)
+                            
+                            ForEach(article) { item in
+                        
+                                if articleGroup == item.group {
+                                    ArticleCardView(article: item)
+                                        .padding(.horizontal)
+                                    .padding(.bottom)
+                                }
+//                                    else {
+//                                    Text("Currently no Articles Are present in \(articleGroup)")
+//                                }
+//                                    .padding(.top)
+    //                            Divider()
+                                
+                            }
                             
                         }
+                        
+                        
+                        
+                       
                         
                     }
                     
