@@ -10,6 +10,8 @@ import SwiftUI
 struct ArticleCardView: View {
     
     var article : Article
+    var views = Int.random(in: 1000...5550)
+    var noOfComments = Int.random(in: 10...55)
     
     var body: some View {
         
@@ -23,22 +25,28 @@ struct ArticleCardView: View {
                 
                 HStack(spacing:16) {
                    
+                    HStack(spacing : 4)  {
+                        Image(article.writerImage)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 22, height: 22, alignment: .center)
                     
-                    Text(article.publisher)
+                    Text(article.writer)
                         .fontWeight(.semibold)
+                    }
                  
                        
                     
                     
                     HStack(spacing : 4) {
                         Image(systemName: "eye.fill")
-                        Text("\(article.views)")
+                        Text("\(views)")
                             .fontWeight(.semibold)
                     }
                
                     HStack(spacing : 4) {
                         Image(systemName: "message.fill")
-                        Text("\(article.noOfComments)")
+                        Text("\(noOfComments)")
                             .fontWeight(.semibold)
                     }
                     

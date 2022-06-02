@@ -38,19 +38,19 @@ struct TrendingCard: View {
                 
                 
                 HStack{
-                    Image(article.publisherImage)
+                    Image(article.writerImage)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 22, height: 22, alignment: .center)
-                    
-                    Text(article.publisher)
+
+                    Text(article.writer)
                         .font(.footnote.weight(.semibold))
                         .foregroundColor(.white)
                         .opacity(0.75)
-                    
+
                     Spacer()
-                    
-                    
+
+
                 }
                 
                 

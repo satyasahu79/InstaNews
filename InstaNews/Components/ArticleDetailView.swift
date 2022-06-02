@@ -10,8 +10,7 @@ import SwiftUI
 struct ArticleDetailView: View {
     
     var article : Article
-    
-    
+    var views : Int
     
     var body: some View {
         ZStack{
@@ -20,7 +19,7 @@ struct ArticleDetailView: View {
             
             
             ScrollView(.vertical, showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 24.0) {
+                VStack(alignment: .leading, spacing: 16.0) {
                     
                     
                     Image(article.image)
@@ -40,7 +39,7 @@ struct ArticleDetailView: View {
                                 Image(systemName: "eye.fill")
                                     .font(.footnote.weight(.semibold))
                                 
-                                Text("\(article.views)")
+                                Text("\(views)")
                                     .font(.footnote.weight(.semibold))
                                 
                             }
@@ -52,31 +51,30 @@ struct ArticleDetailView: View {
                             
                         }.opacity(0.75)
                         
-                        Divider()
-                            .padding(.top)
-                            .padding(.bottom)
                         
+                        Button {
+                            print("Add to bookmark")
+                        } label: {
+                            Spacer()
+                            Text("Add to bookmarks")
+                            Spacer()
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.secondary)
+                        
+                        
+                        Divider()
+                        //                            .padding(.top)
+//                            .padding(.bottom)
                         
                         
                         Text(article.title)
                             .font(.title2.weight(.semibold))
+//                            .padding(.top,-20)
                         
                         
                         
-                        HStack(spacing : 4){
-                            Image(article.publisherImage)
-                                
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 18, height: 18, alignment: .center)
-                                .clipped()
-                                
-                            
-                            Text(article.publisher)
-                                .font(.footnote.weight(.semibold))
-                                
-                            
-                        }.opacity(0.75)
+                      
                         
                     }
                     
@@ -100,7 +98,7 @@ struct ArticleDetailView: View {
                     }
                     
                     Divider()
-//                        .padding(.top)
+                    //                        .padding(.top)
                     
                     Text(article.body)
                     
@@ -108,17 +106,16 @@ struct ArticleDetailView: View {
                         .padding(.top)
                     
                     HStack {
-                        Spacer()
+                        //                        Spacer()
                         Text("Article by".uppercased())
                             .font(.footnote.weight(.semibold))
                             .foregroundColor(.secondary)
-//                            .padding(.horizontal, 16)
-                        Spacer()
+                        //                            .padding(.horizontal, 16)
+                        //                        Spacer()
                     }
-                        
+                    
                     
                     HStack(spacing: 24.0){
-                        
                         
                         Image(article.writerImage)
                             .resizable()
@@ -128,7 +125,7 @@ struct ArticleDetailView: View {
                         VStack(alignment: .leading, spacing: 4.0) {
                             Text(article.writer)
                                 .font(.title3.weight(.semibold))
-                            .opacity(0.75)
+                                .opacity(0.75)
                             
                             Text(article.writerPosition)
                         }
@@ -137,10 +134,6 @@ struct ArticleDetailView: View {
                     
                     Divider()
                         .padding(.top)
-                    
-                    
-                    
-                    
                     
                     Spacer()
                 }
@@ -160,25 +153,9 @@ struct ArticleDetailView: View {
 
 struct ArticleDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleDetailView(article: articles[0])
-//            .preferredColorScheme(.dark)
+        ArticleDetailView(article: articles[0], views: 2000)
+                    .preferredColorScheme(.dark)
     }
 }
 
-struct Categories: View {
-    
-    @Environment(\.colorScheme) var colorScheme
-    var text : String
-    
-    var body: some View {
-        Button(action: {}) {
-            Text(text)
-                .padding(.all,4)
-                .opacity(colorScheme == .dark ? 0.75 : 1)
-        }
-        .tint(.indigo.opacity(colorScheme == .dark ? 0.25 : 0.75))
-        .buttonStyle(.borderedProminent)
-        .buttonBorderShape(.capsule)
-        .controlSize(.small)
-    }
-}
+

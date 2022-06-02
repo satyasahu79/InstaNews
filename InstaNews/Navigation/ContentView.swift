@@ -14,6 +14,7 @@ struct ContentView: View {
     @EnvironmentObject var model : Model
     
     var body: some View {
+        
         ZStack {
             
             switch selectedTab {
@@ -24,12 +25,13 @@ struct ContentView: View {
             case .bookmarks:
                 BookmarksView()
             case .profile:
-                UserComments()
+                ProfileView()
             }
             
             TabBar()
                 .offset( y: model.showDetail ? 200 : 0)
-        }
+        
+        }   // ZStack Ends
         .safeAreaInset(edge: .bottom) {
             Color.clear.frame(height: 44)
         }

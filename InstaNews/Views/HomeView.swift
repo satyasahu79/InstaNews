@@ -38,7 +38,10 @@ struct HomeView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment:.top , spacing: 0) {
                         ForEach(article) { item in
-                            TrendingCard(article: item)
+                            if item.isTrending {
+                                TrendingCard(article: item)
+                            }
+                            
                         }
                     }
                 }
