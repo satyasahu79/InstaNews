@@ -13,8 +13,10 @@ struct HomeView: View {
     @State var hasScrolled = false
     @State var show = false
     @State var showsStatusBar : Bool = true
+    
+    @EnvironmentObject var articleViewModel : ArticleViewModel
 
-    var article : [Article] = articles
+    var article : [Article]
     
     var body: some View {
         
@@ -102,7 +104,8 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView( article: [articlePreviewData])
+            .environmentObject(ArticleViewModel())
            
     }
 }

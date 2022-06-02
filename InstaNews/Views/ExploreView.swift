@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ExploreView: View {
     
-    var article : [Article] = articles
+    var article : [Article]
     
     var articleGroups = ["Auto News","Bussiness News","Political News", "Personal Finance News","Tech News","Tech News","Travel News","Sports News"]
     
@@ -71,7 +71,7 @@ struct ExploreView: View {
 
 struct ExploreView_Previews: PreviewProvider {
     static var previews: some View {
-        ExploreView()
+        ExploreView(article: [articlePreviewData])
     }
 }
 

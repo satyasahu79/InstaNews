@@ -96,6 +96,6 @@ struct ArticleCardView: View {
 
 struct ArticleCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleCardView(article: articles[0])
+        ArticleCardView(article: articlePreviewData)
     }
 }

@@ -11,12 +11,14 @@ import SwiftUI
 struct InstaNewsApp: App {
     
     @StateObject var model = Model()
+    @StateObject var articleViewModel = ArticleViewModel()
     
     var body: some Scene {
         WindowGroup {
 //            OnboardingView()
                         ContentView()
                 .environmentObject(model)
+                .environmentObject(articleViewModel)
         }
     }
 }

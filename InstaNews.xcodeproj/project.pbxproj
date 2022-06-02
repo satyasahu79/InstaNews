@@ -39,6 +39,11 @@
 		8ABB3FCB2849479E009582F6 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB3FCA2849479E009582F6 /* schema.json */; };
 		8ABB3FCD28494BC3009582F6 /* ArticleQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB3FCC28494BC2009582F6 /* ArticleQuery.graphql */; };
 		8ABB3FD028494D1F009582F6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB3FCF28494D1F009582F6 /* API.swift */; };
+		8ABB3FD228495159009582F6 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB3FD128495159009582F6 /* Network.swift */; };
+		8ABB3FD428495208009582F6 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB3FD328495208009582F6 /* ArticleViewModel.swift */; };
+		8ABB3FD6284957E1009582F6 /* DummyData.json in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB3FD5284957E1009582F6 /* DummyData.json */; };
+		8ABB3FD82849665D009582F6 /* LoadFromFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB3FD72849665D009582F6 /* LoadFromFile.swift */; };
+		8ABB3FDA2849668C009582F6 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB3FD92849668C009582F6 /* PreviewData.swift */; };
 		8ABEB25E28454A5200A3BB4F /* ArticleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABEB25D28454A5100A3BB4F /* ArticleCardView.swift */; };
 		8ABEB2602845591300A3BB4F /* SmallHeadline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABEB25F2845591300A3BB4F /* SmallHeadline.swift */; };
 		8ABEB2622845594A00A3BB4F /* TextGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABEB2612845594A00A3BB4F /* TextGradient.swift */; };
@@ -79,6 +84,11 @@
 		8ABB3FCA2849479E009582F6 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = schema.json; path = InstaNews/schema.json; sourceTree = SOURCE_ROOT; };
 		8ABB3FCC28494BC2009582F6 /* ArticleQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ArticleQuery.graphql; sourceTree = "<group>"; };
 		8ABB3FCF28494D1F009582F6 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		8ABB3FD128495159009582F6 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		8ABB3FD328495208009582F6 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		8ABB3FD5284957E1009582F6 /* DummyData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DummyData.json; sourceTree = "<group>"; };
+		8ABB3FD72849665D009582F6 /* LoadFromFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFromFile.swift; sourceTree = "<group>"; };
+		8ABB3FD92849668C009582F6 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		8ABEB25D28454A5100A3BB4F /* ArticleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCardView.swift; sourceTree = "<group>"; };
 		8ABEB25F2845591300A3BB4F /* SmallHeadline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallHeadline.swift; sourceTree = "<group>"; };
 		8ABEB2612845594A00A3BB4F /* TextGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextGradient.swift; sourceTree = "<group>"; };
@@ -158,7 +168,9 @@
 		8A99CF11283F9AD8002BE2D1 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				8ABB3FD5284957E1009582F6 /* DummyData.json */,
 				8A99CF12283F9AD8002BE2D1 /* Preview Assets.xcassets */,
+				8ABB3FD72849665D009582F6 /* LoadFromFile.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -190,6 +202,7 @@
 				8A99CF22283F9CD4002BE2D1 /* Tab.swift */,
 				8A99CF24283F9D01002BE2D1 /* PreferenceKeys.swift */,
 				8A99CF26283F9D19002BE2D1 /* Model.swift */,
+				8ABB3FD92849668C009582F6 /* PreviewData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,6 +212,8 @@
 			children = (
 				8ABB3FCF28494D1F009582F6 /* API.swift */,
 				8ABB3FCC28494BC2009582F6 /* ArticleQuery.graphql */,
+				8ABB3FD128495159009582F6 /* Network.swift */,
+				8ABB3FD328495208009582F6 /* ArticleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -321,7 +336,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		8ABB3FCE28494BFB009582F6 /* Generate Appolo GraphQL API */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -333,7 +348,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
 		};
@@ -352,11 +367,13 @@
 				8A46CB6128428CE30056CC7A /* BlurView.swift in Sources */,
 				8A99CF0E283F9AD5002BE2D1 /* ContentView.swift in Sources */,
 				8ABB3FD028494D1F009582F6 /* API.swift in Sources */,
+				8ABB3FDA2849668C009582F6 /* PreviewData.swift in Sources */,
 				8A99CF23283F9CD4002BE2D1 /* Tab.swift in Sources */,
 				8A99CF0C283F9AD5002BE2D1 /* InstaNewsApp.swift in Sources */,
 				8A99CF2A283F9DF9002BE2D1 /* HomeView.swift in Sources */,
 				8ABEB2602845591300A3BB4F /* SmallHeadline.swift in Sources */,
 				8A2D4F7A2845234A003675AE /* TrendingCard.swift in Sources */,
+				8ABB3FD82849665D009582F6 /* LoadFromFile.swift in Sources */,
 				8ABEB26728457A1B00A3BB4F /* ArticleDetailView.swift in Sources */,
 				8A99CF25283F9D01002BE2D1 /* PreferenceKeys.swift in Sources */,
 				8A569F0A28462EB600E415BD /* UserComments.swift in Sources */,
@@ -364,12 +381,15 @@
 				8ABEB2622845594A00A3BB4F /* TextGradient.swift in Sources */,
 				8A99CF30283F9E1F002BE2D1 /* ProfileView.swift in Sources */,
 				8A46CB5C284087290056CC7A /* Courses.swift in Sources */,
+				8ABB3FD428495208009582F6 /* ArticleViewModel.swift in Sources */,
 				8A99CF36283FA659002BE2D1 /* NavigationBar.swift in Sources */,
 				8A99CF21283F9C9B002BE2D1 /* Styles.swift in Sources */,
+				8ABB3FD6284957E1009582F6 /* DummyData.json in Sources */,
 				8ABEB25E28454A5200A3BB4F /* ArticleCardView.swift in Sources */,
 				8A46CB5F28428C0A0056CC7A /* OnboardingView.swift in Sources */,
 				8A99CF34283FA60F002BE2D1 /* AnimatableFontModifier.swift in Sources */,
 				8ABEB26528455E6700A3BB4F /* BackgroundBlob.swift in Sources */,
+				8ABB3FD228495159009582F6 /* Network.swift in Sources */,
 				8ABB3FC92848F7E0009582F6 /* Categories.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

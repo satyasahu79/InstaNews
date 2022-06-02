@@ -1,0 +1,36 @@
+//
+//  articlePreviewData.swift
+//  InstaNews
+//
+//  Created by Satya Prakash Sahu on 03/06/22.
+//
+//
+//import Foundation
+//
+
+
+{
+    "publishedAt": "2022-06-02T19:47:02.964Z",
+    "id": "3BjVk0rfC7XXxiXXMx8wo2",
+    "title": "BJP UP has spent over ₹3 crore on Facebook ads last month, Congress spent ₹6 lakh",
+    "image":
+    "https://images.ctfassets.net/lz6tmmp63afk/5r8zi6Rgp6q5VXFdTUyV01/6c8191669e2f4f8a37975716af1d4383/fb_bjp_reuters_073021042025.jpg"
+    ,
+    "date": "2nd June,2022",
+//    "category": [
+//        "Politics",
+//        "BJP",
+//        "UP Elections",
+//        "Narendra Modi"
+//    ],
+    "group": "Political News",
+    "isBookmarked": false,
+    "isTrending": false,
+    "writer": "Kirtti Bhala",
+    "writerImage":
+    "https://images.ctfassets.net/lz6tmmp63afk/iNBuTFOBYeJvCz8Mqypdf/e80e16b3d2f52d8585b647a1d7ec9998/photo-1600188768149-f27db3bc6ef9"
+    ,
+    "writerPosition": "Senior Digital Content Creator",
+    "body": "The Bharatiya Janata Party (BJP) has spent over ₹3 crore on Facebook advertisements in Uttar Pradesh (UP) ahead of the state assembly elections, Facebook Ad Library data has revealed. This is nearly half of the total ₹7.5 crore spent on Facebook ads in the UP region between January 21 to February 19.\n\nJust a back of the envelope calculation shows that the UP arm of BJP would have spent roughly ₹10 lakh on daily basis on these Facebook ads, which is significantly higher than the ₹21,000 spent by Indian National Congress (INC) in the region in the same time frame. \n\nOther political parties — including the Samajwadi Party and Rashtriya Lok Dal — are trailing behind when it comes to their Facebook ad spends in the last 30 days. \n\nThe second biggest ad spender in the UP region was hyperlocal platform Hindi Publicvibe, which spent nearly ₹79 lakh between January 21 to February 19. \n\nThe Assembly Elections in UP will be conducted in seven phases from February 10 to March 7, and the results will be announced on March 10. The first three phases of polling have already been carried out on February 10, February 14 and February 20 in areas like Muzaffarnagar, Modi Nagar, Jhansi Nagar and others. \n\nOverall there are over 15 crore registered voters in the region, of which 52.8 lakh are new voters. ",
+    "articleLink": "https://www.businessinsider.in/politics/news/bjp-up-has-spent-over-3-crore-on-facebook-ads-last-month-congress-spent-6-lakh/articleshow/89750791.cms"
+}

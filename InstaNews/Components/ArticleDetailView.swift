@@ -93,22 +93,22 @@ struct ArticleDetailView: View {
                     
                     
                     
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(alignment: .center, spacing: 16.0) {
-                            
-                            ForEach(article.category,id: \.self) { item in
-                                Categories(text: item)
-                                //                            .frame(maxWidth :200)
-                                    .lineLimit(1)
-                                
-                                
-                                
-                            }
-                        }
-                        
-                        
-                        
-                    }
+//                    ScrollView(.horizontal, showsIndicators: false) {
+//                        HStack(alignment: .center, spacing: 16.0) {
+//
+//                            ForEach(article.category,id: \.self) { item in
+//                                Categories(text: item)
+//                                //                            .frame(maxWidth :200)
+//                                    .lineLimit(1)
+//
+//
+//
+//                            }
+//                        }
+//
+//
+//
+//                    }
                     
                     Divider()
                     //                        .padding(.top)
@@ -178,7 +178,7 @@ struct ArticleDetailView: View {
 
 struct ArticleDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleDetailView(article: articles[0], views: 2000)
+        ArticleDetailView(article: articlePreviewData, views: 2000)
                     .preferredColorScheme(.dark)
     }
 }

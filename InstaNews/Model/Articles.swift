@@ -7,37 +7,71 @@
 
 import Foundation
 
-struct Article : Identifiable    {
-    let id = UUID()
-    var title : String
-    var image : String
-    var date : String
-    var category : [String]
-    var group : String
-    var isBookmarked : Bool
-    var isTrending : Bool
-    var writer : String
-    var writerImage : String
-    var writerPosition : String
-    var body : String
-    var articleLink : String
+
+
+typealias ArticlesData = ArticleQuery.Data.ArticleCollection
+
+struct ArticlesColection : Decodable   {
+    let articles : [Article]
+    
+    
+    
+    init(_ articlesCollection : ArticlesData?)    {
+        self.articles = (articlesCollection?.articles.map({ article -> Article in
+            Article(article)
+        })) ?? []
+    }
 }
 
 
 
-
+struct Article : Identifiable, Decodable    {
+    let id : String
+    let title : String
+    let image : String
+    let date : String
+//    var category : [String]
+    let group : String
+    var isBookmarked : Bool
+    let isTrending : Bool
+    let writer : String
+    let writerImage : String
+    let writerPosition : String
+    let body : String
+    let articleLink : String
+    
+    init (_ article : ArticlesData.Article?)    {
+//        self.id = article?.sys.id ?? ""
+//        self.publishedAt = article?.sys.publishedAt ?? ""
+//        self.title = article?.title ?? ""
+//        self.subtitle = article?.subtitle ?? ""
+//        self.numberOfSections = article?.numberOfSections ?? 0
+//        self.numberOfHours = course?.numberOfHours ?? 0
+//        self.subject = course?.subject ?? ""
+//        self.colors = course?.colors ?? ["#0279FF","#4FA3FF"]
+//        self.illustration = course?.illustration?.url ?? ""
+        
+        self.id = article?.sys.id ?? ""
+        self.title = article?.title ?? ""
+        self.image = article?.image?.url ?? ""
+        self.date = article?.date ?? ""
+//        self.category = article?.category
+        self.group = article?.group ?? ""
+        self.isBookmarked = article?.isBookmarked ?? false
+        self.isTrending = article?.isTrending ?? true
+        self.writer = article?.writer ?? ""
+        self.writerImage = article?.writerImage?.url ?? ""
+        self.writerPosition = article?.writerPosition ?? ""
+        self.body = article?.body ?? ""
+        self.articleLink = article?.articleLink ?? ""
+    }
+}
 
 
 var bookmarkedArticles : [Article] = []
 
 
-var articles : [Article] = [
-    Article(title: "The Beautiful and Largest Hawaiian Island", image: "https://images.unsplash.com/photo-1600188768149-f27db3bc6ef9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80", date: "14 June 2021", category: ["Travelling", "Holiday", "Trip Advice"], group: "Travel News", isBookmarked: false, isTrending: false, writer: "Jane Cooper", writerImage: "https://images.unsplash.com/photo-1600188768149-f27db3bc6ef9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80", writerPosition: "Senior Editor", body: "The third largest Hawaiian island is home to the majority of Hawaii’s diverse population, a fusion of East and West cultures rooted in the values and traditions of the Native Hawaiian people.\n\nIt’s this fundamental contrast between the ancient and the modern that makes discovering Oahu — from bustling city life to laidback surf towns — so enjoyable", articleLink: "google.com"),
-    
-    Article(title: "Politics", image: "articleImage2", date: "14th June,2021", category: ["Travelling", "Holiday", "Political News"], group: "Political News", isBookmarked: false, isTrending: true, writer: "Jane Cooper", writerImage: "writerImage1", writerPosition: "Senior Editor", body: "The third largest Hawaiian island is home to the majority of Hawaii’s diverse population, a fusion of East and West cultures rooted in the values and traditions of the Native Hawaiian people.\n\nIt’s this fundamental contrast between the ancient and the modern that makes discovering Oahu — from bustling city life to laidback surf towns — so enjoyable", articleLink: "google.com"),
-    
-    Article(title: "Sports News", image: "articleImage2", date: "14 June 2021", category: ["Travelling", "Holiday", "Trip Advice"], group: "Sports News", isBookmarked: false, isTrending: true, writer: "Jane Cooper", writerImage: "writerImage1", writerPosition: "Senior Editor", body: "The third largest Hawaiian island is home to the majority of Hawaii’s diverse population, a fusion of East and West cultures rooted in the values and traditions of the Native Hawaiian people.\n\nIt’s this fundamental contrast between the ancient and the modern that makes discovering Oahu — from bustling city life to laidback surf towns — so enjoyable", articleLink: "google.com")
-    
-]
+
+
 
 

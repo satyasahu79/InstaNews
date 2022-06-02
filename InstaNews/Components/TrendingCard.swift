@@ -95,7 +95,7 @@ struct TrendingCard: View {
 
 struct TrendingCard_Previews: PreviewProvider {
     static var previews: some View {
-        TrendingCard( article: articles[0])
+        TrendingCard(article: articlePreviewData)
         //            .preferredColorScheme(.dark)
     }
 }
