@@ -20,39 +20,24 @@ struct Article : Identifiable    {
     var writerImage : String
     var writerPosition : String
     var body : String
+    var articleLink : String
 }
 
+
+
+
+
+
+var bookmarkedArticles : [Article] = []
 
 
 var articles : [Article] = [
-    Article(title: "The Beautiful and Largest Hawaiian Island", image: "articleImage2", date: "14 June 2021", category: ["Travelling", "Holiday", "Trip Advice"], group: "Travel News", isBookmarked: false, isTrending: false, writer: "Jane Cooper", writerImage: "writerImage1", writerPosition: "Senior Editor", body: "The third largest Hawaiian island is home to the majority of Hawaii’s diverse population, a fusion of East and West cultures rooted in the values and traditions of the Native Hawaiian people.\n\nIt’s this fundamental contrast between the ancient and the modern that makes discovering Oahu — from bustling city life to laidback surf towns — so enjoyable"),
+    Article(title: "The Beautiful and Largest Hawaiian Island", image: "articleImage2", date: "14 June 2021", category: ["Travelling", "Holiday", "Trip Advice"], group: "Travel News", isBookmarked: false, isTrending: false, writer: "Jane Cooper", writerImage: "writerImage1", writerPosition: "Senior Editor", body: "The third largest Hawaiian island is home to the majority of Hawaii’s diverse population, a fusion of East and West cultures rooted in the values and traditions of the Native Hawaiian people.\n\nIt’s this fundamental contrast between the ancient and the modern that makes discovering Oahu — from bustling city life to laidback surf towns — so enjoyable", articleLink: "google.com"),
     
-    Article(title: "Politics", image: "articleImage2", date: "14 June 2021", category: ["Travelling", "Holiday", "Political News"], group: "Political News", isBookmarked: false, isTrending: true, writer: "Jane Cooper", writerImage: "writerImage1", writerPosition: "Senior Editor", body: "The third largest Hawaiian island is home to the majority of Hawaii’s diverse population, a fusion of East and West cultures rooted in the values and traditions of the Native Hawaiian people.\n\nIt’s this fundamental contrast between the ancient and the modern that makes discovering Oahu — from bustling city life to laidback surf towns — so enjoyable"),
+    Article(title: "Politics", image: "articleImage2", date: "14th June,2021", category: ["Travelling", "Holiday", "Political News"], group: "Political News", isBookmarked: false, isTrending: true, writer: "Jane Cooper", writerImage: "writerImage1", writerPosition: "Senior Editor", body: "The third largest Hawaiian island is home to the majority of Hawaii’s diverse population, a fusion of East and West cultures rooted in the values and traditions of the Native Hawaiian people.\n\nIt’s this fundamental contrast between the ancient and the modern that makes discovering Oahu — from bustling city life to laidback surf towns — so enjoyable", articleLink: "google.com"),
     
-    Article(title: "Sports News", image: "articleImage2", date: "14 June 2021", category: ["Travelling", "Holiday", "Trip Advice"], group: "Sports News", isBookmarked: false, isTrending: true, writer: "Jane Cooper", writerImage: "writerImage1", writerPosition: "Senior Editor", body: "The third largest Hawaiian island is home to the majority of Hawaii’s diverse population, a fusion of East and West cultures rooted in the values and traditions of the Native Hawaiian people.\n\nIt’s this fundamental contrast between the ancient and the modern that makes discovering Oahu — from bustling city life to laidback surf towns — so enjoyable")
+    Article(title: "Sports News", image: "articleImage2", date: "14 June 2021", category: ["Travelling", "Holiday", "Trip Advice"], group: "Sports News", isBookmarked: false, isTrending: true, writer: "Jane Cooper", writerImage: "writerImage1", writerPosition: "Senior Editor", body: "The third largest Hawaiian island is home to the majority of Hawaii’s diverse population, a fusion of East and West cultures rooted in the values and traditions of the Native Hawaiian people.\n\nIt’s this fundamental contrast between the ancient and the modern that makes discovering Oahu — from bustling city life to laidback surf towns — so enjoyable", articleLink: "google.com")
     
 ]
 
-var travelArticles = articles.filter { article in
-    article.group == "Travel"
-}
 
-var politicalArticles = articles.filter { article in
-    article.group == "Politics"
-}
-
-var educationalArticles = articles.filter { article in
-    article.group == "Education"
-}
-
-var entertainmentArticles = articles.filter { article in
-    article.group == "Entertainment"
-}
-
-var bookmarkedArticles = articles.filter {   article in
-    article.isBookmarked == true
-}
-
-var sportsArticles = articles.filter {   article in
-    article.group == "Sports"
-}

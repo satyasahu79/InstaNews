@@ -1,0 +1,26 @@
+query Article {
+  articleCollection {
+    articles : items{
+      sys {
+        publishedAt
+        id
+      }
+      title
+      image{
+        url
+      }
+      date
+      category
+      group
+      isBookmarked
+      isTrending
+      writer
+      writerImage{
+        url
+      }
+      writerPosition
+      body
+      articleLink
+    }
+  }
+}

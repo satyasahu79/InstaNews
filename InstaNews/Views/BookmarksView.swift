@@ -9,6 +9,8 @@ import SwiftUI
 
 struct BookmarksView: View {
     
+    
+    
     var article : [Article] = bookmarkedArticles
     
     var body: some View {

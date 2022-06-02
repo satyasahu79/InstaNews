@@ -35,8 +35,6 @@ struct ArticleCardView: View {
                         .fontWeight(.semibold)
                     }
                  
-                       
-                    
                     
                     HStack(spacing : 4) {
                         Image(systemName: "eye.fill")
