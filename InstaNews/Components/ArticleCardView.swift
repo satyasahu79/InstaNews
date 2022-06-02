@@ -26,12 +26,26 @@ struct ArticleCardView: View {
                 HStack(spacing:16) {
                    
                     HStack(spacing : 4)  {
-                        Image(article.writerImage)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 22, height: 22, alignment: .center)
+                        
+                        
+//                        Image(article.writerImage)
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 22, height: 22, alignment: .center)
                     
-                    Text(article.writer)
+                        AsyncImage(url: URL(string: article.writerImage)) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 22, height: 22, alignment: .center)
+                                .clipShape(Circle())
+                                
+                        } placeholder: {
+                            ProgressView()
+                        }
+                    
+                        
+                        Text(article.writer)
                         .fontWeight(.semibold)
                     }
                  
@@ -58,11 +72,22 @@ struct ArticleCardView: View {
             
             Spacer()
             
-            Image(article.image)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 80, height: 80)
-                .mask(RoundedRectangle(cornerRadius: 12, style: .continuous))
+            //            Image(article.image)
+            //                .resizable()
+            //                .scaledToFill()
+            //                .frame(width: 80, height: 80)
+            //                .mask(RoundedRectangle(cornerRadius: 12, style: .continuous))
+            
+            AsyncImage(url: URL(string: article.image)) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 90, height: 90)
+                    .mask(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                
+            } placeholder: {
+                ProgressView()
+            }
             
         }
         

@@ -22,12 +22,25 @@ struct ArticleDetailView: View {
                 VStack(alignment: .leading, spacing: 16.0) {
                     
                     
-                    Image(article.image)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(height: 200, alignment: .center)
-                        .clipped()
-                        .cornerRadius(16)
+//                    Image(article.image)
+//                        .resizable()
+//                        .scaledToFill()
+//                        .frame(height: 200, alignment: .center)
+//                        .clipped()
+//                        .cornerRadius(16)
+                    
+                    AsyncImage(url: URL(string: article.image)) { image in
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .frame(height: 200, alignment: .center)
+                            .clipped()
+                            .cornerRadius(16)
+                            
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    
                     
                     
                     
@@ -117,10 +130,22 @@ struct ArticleDetailView: View {
                     
                     HStack(spacing: 24.0){
                         
-                        Image(article.writerImage)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 64, height: 64, alignment: .center)
+//                        Image(article.writerImage)
+//                            .resizable()
+//                            .scaledToFill()
+//                            .frame(width: 64, height: 64, alignment: .center)
+                        
+                        AsyncImage(url: URL(string: article.writerImage)) { image in
+                            image
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 64, height: 64, alignment: .center)
+                                .clipShape(Circle())
+                                
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        
                         
                         VStack(alignment: .leading, spacing: 4.0) {
                             Text(article.writer)

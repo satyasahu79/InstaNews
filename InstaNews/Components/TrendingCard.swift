@@ -15,9 +15,19 @@ struct TrendingCard: View {
     var body: some View {
         ZStack {
             
-            Image(article.image)
-                .resizable()
-                .scaledToFill()
+//            Image(article.image)
+//                .resizable()
+//                .scaledToFill()
+            
+            AsyncImage(url: URL(string: article.image)) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    
+            } placeholder: {
+                ProgressView()
+            }
+            
             
             Rectangle()
                 .fill(LinearGradient(colors: [.black.opacity(0.9),.black.opacity(0)], startPoint: .bottom, endPoint: .top))
@@ -38,11 +48,24 @@ struct TrendingCard: View {
                 
                 
                 HStack{
-                    Image(article.writerImage)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 22, height: 22, alignment: .center)
+//                    Image(article.writerImage)
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 22, height: 22, alignment: .center)
 
+                    AsyncImage(url: URL(string: article.writerImage)) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 22, height: 22, alignment: .center)
+                            .clipShape(Circle())
+                            
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    
+                    
+                    
                     Text(article.writer)
                         .font(.footnote.weight(.semibold))
                         .foregroundColor(.white)
