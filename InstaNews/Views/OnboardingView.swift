@@ -11,7 +11,11 @@ struct OnboardingView: View {
     
     @Environment(\.colorScheme) var colorScheme
     
-    @State var showSignup = false
+//    @State var showSignup = false
+//    @Binding var show : Bool
+    
+//    @State private var angle = 0.0
+    
     
     var body: some View {
         
@@ -22,7 +26,7 @@ struct OnboardingView: View {
                 
                 VStack(alignment: .leading) {
                     
-                    if !showSignup{
+                
                         Text("Find thousands of intresting news every day.")
                             .font(.system(size: 50))
                             .fontWeight(.bold)
@@ -35,31 +39,30 @@ struct OnboardingView: View {
                             .font(.headline)
                             .fontWeight(.semibold)
         //                    .blendMode( colorScheme == .dark ? .overlay :  .overlay)
-                            .opacity(colorScheme == .light ? 1 : 0.5)
+                            .opacity(colorScheme == .light ? 0.5 : 0.5)
                             
                         
                         Spacer()
-                        GradientButton(buttonTitle: "Get Started") {
-                            withAnimation(.easeInOut) {
-                                showSignup.toggle()
-                            }
-                            
-                        }.padding()
-                            
-                    
-                    }
+//                        GradientButton(buttonTitle: "Get Started") {
+//                            withAnimation(.easeInOut) {
+//                                show.toggle()
+//                            }
+//
+//                        }.padding()
+//
                     
                     
                 }
+               
                 .padding(.horizontal,20)
     //            .frame(height : 700)
                 .offset( y: -100)
                     
             }
         
-            if showSignup {
-                SignupView()
-            }
+//            if showSignup {
+//                SignupView(showOnboarding: $showOnboarding)
+//            }
         
         
         }
@@ -71,7 +74,7 @@ struct OnboardingView: View {
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView()
+        OnboardingView( )
             .preferredColorScheme(.dark)
     }
 }

@@ -23,8 +23,6 @@ struct ArticlesColection : Decodable   {
     }
 }
 
-
-
 struct Article : Identifiable, Decodable    {
     let id : String
     let title : String
@@ -41,15 +39,7 @@ struct Article : Identifiable, Decodable    {
     let articleLink : String
     
     init (_ article : ArticlesData.Article?)    {
-//        self.id = article?.sys.id ?? ""
-//        self.publishedAt = article?.sys.publishedAt ?? ""
-//        self.title = article?.title ?? ""
-//        self.subtitle = article?.subtitle ?? ""
-//        self.numberOfSections = article?.numberOfSections ?? 0
-//        self.numberOfHours = course?.numberOfHours ?? 0
-//        self.subject = course?.subject ?? ""
-//        self.colors = course?.colors ?? ["#0279FF","#4FA3FF"]
-//        self.illustration = course?.illustration?.url ?? ""
+
         
         self.id = article?.sys.id ?? ""
         self.title = article?.title ?? ""

@@ -11,6 +11,7 @@ struct ArticleDetailView: View {
     
     var article : Article
     var views = Int.random(in: 1000...5550)
+    @State var isBookmarked : Bool = false
     
     var body: some View {
         ZStack{
@@ -65,15 +66,21 @@ struct ArticleDetailView: View {
                         }.opacity(0.75)
                         
                         
-                        Button {
-                            print("Add to bookmark")
-                        } label: {
-                            Spacer()
-                            Text("Add to bookmarks")
-                            Spacer()
+//                        Button {
+////                            article.isBookmarked.toggle()
+////                            bookmarkedArticles = Article(article)
+//                            isBookmarked.toggle()
+//                        } label: {
+//                            Spacer()
+//                            Text(article.isBookmarked ? "Add to bookmarks" : "Bookmarked")
+//                            Spacer()
+//                        }
+//                        .buttonStyle(.borderedProminent)
+////                        .tint(.secondary)
+                        ///
+                        GradientButton(buttonTitle: isBookmarked ? "Bookmarked" : "Add to Bookmarks") {
+                            isBookmarked.toggle()
                         }
-                        .buttonStyle(.borderedProminent)
-                        .tint(.secondary)
                         
                         
                         Divider()
@@ -168,6 +175,20 @@ struct ArticleDetailView: View {
             
             
             .navigationBarTitle(article.title, displayMode: .inline)
+            
+            .toolbar {
+                        ToolbarItem(placement: .primaryAction) {
+                            Button {
+                                shareButton(articleURL: article.articleLink)
+                            } label: {
+                                Image(systemName: "square.and.arrow.up")
+                                            .foregroundColor(.primary)
+                            }
+
+                        }
+
+                       
+                    }
 //            .navigationBarHidden(true)
         }
         
@@ -175,6 +196,15 @@ struct ArticleDetailView: View {
         
         
     }
+    func shareButton(articleURL : String) {
+            let url = URL(string: articleURL)
+            let activityController = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
+
+            UIApplication.shared.windows.first?.rootViewController!.present(activityController, animated: true, completion: nil)
+    }
+    
+    
+    
 }
 
 struct ArticleDetailView_Previews: PreviewProvider {

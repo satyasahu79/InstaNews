@@ -41,10 +41,14 @@ struct TrendingCard: View {
                     .foregroundColor(.white)
                     .opacity(0.75)
                 
-                Text(article.title)
-                    .font(.headline.weight(.semibold))
-                    .foregroundColor(.white)
+                HStack {
+                    Text(article.title)
+                        .font(.headline.weight(.semibold))
+//                        .frame(width: 180,alignment: .leading)
+                        .foregroundColor(.white)
                     .lineLimit(2)
+                    Spacer()
+                }
                 
                 
                 HStack{

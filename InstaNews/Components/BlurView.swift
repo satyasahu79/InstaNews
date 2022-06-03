@@ -9,7 +9,8 @@ import SwiftUI
 
 struct BlurView: View {
     
-    @State var appear : Bool = false
+//    @State var appear : Bool = false
+//    @State private var angle = 0.0
     
     var body: some View {
       
@@ -123,17 +124,17 @@ struct BlurView: View {
 //
             .frame(width: 470, height: 443)
             .offset(x:70, y: 800)
+//            .rotationEffect(Angle.degrees(angle))
 //            .scaleEffect(0.5)
-//            .rotationEffect(.degrees(appear ? 360 : 00),anchor: UnitPoint(x: 0.35, y: -0.00))
+//            .rotationEffect(.degrees(angle),anchor: UnitPoint(x: 0.35, y: -0.00))
             
-            .rotationEffect(.degrees(appear ? 360 : 00),anchor: UnitPoint(x: 0.4, y: -0.0))
+//            .rotationEffect(.degrees(appear ? 360 : 00),anchor: UnitPoint(x: 0.4, y: -0.0))
             
-        }.onAppear{
-            
-            withAnimation(.linear(duration: 20).repeatForever(autoreverses: false)) {
-                appear = true
-            }
-            
+        
+//            .onAppear() {
+//            withAnimation(.linear(duration: 30)) {
+////                self.angle += 360
+//            }
         }
         
     }

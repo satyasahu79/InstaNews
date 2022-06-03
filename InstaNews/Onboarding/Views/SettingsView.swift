@@ -47,7 +47,7 @@ struct SettingsView: View {
                     .foregroundColor(.white)
                     .font(.largeTitle.bold())
                     .padding(.top)
-                Text("Manage your Design+Code profile and account")
+                Text("Manage your InstaNews profile and account")
                     .foregroundColor(.white.opacity(0.7))
                     .font(.callout)
                 

@@ -11,11 +11,15 @@ struct TabBar: View {
     @AppStorage("selectedTab") var selectedTab: Tab = .home
     @State var color: Color = .teal
     @State var tabItemWidth: CGFloat = 0
+    @State var profileSelected : Bool = false
+    
     
     var body: some View {
         HStack {
             buttons
         }
+        
+        
         .padding(.horizontal, 8)
         .padding(.top, 14)
         .frame(height: 88, alignment: .top)
@@ -29,7 +33,10 @@ struct TabBar: View {
         .strokeStyle(cornerRadius: 34)
         .frame(maxHeight: .infinity, alignment: .bottom)
         .ignoresSafeArea()
+        .offset(y : selectedTab == .profile ? -10 : 0)
+        
     }
+        
     
     var buttons: some View {
         ForEach(tabItems) { item in

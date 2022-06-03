@@ -197,32 +197,35 @@ struct ProfileView: View {
                 .cornerRadius(30)
                 .padding(.horizontal)
                 
-                
-                VStack {
-                    Spacer()
-                    Button(action: {
-                        signout()
-                    }, label: {
-                        Image(systemName: "arrow.turn.up.forward.iphone.fill")
-                            .foregroundColor(.white)
-                            .font(.system(size: 15, weight: .medium, design: .rounded))
-                            .rotation3DEffect(
-                                Angle(degrees: 180),
-                                axis: (x: 0.0, y: 0.0, z: 1.0)
-                            )
-                            .background(
-                                Circle()
-                                    .stroke(Color.white.opacity(0.2), lineWidth: 1)
-                                    .frame(width: 42, height: 42, alignment: .center)
-                                    .overlay(
-                                        VisualEffectBlur(blurStyle: .dark)
-                                            .cornerRadius(21)
-                                            .frame(width: 42, height: 42, alignment: .center)
-                                    )
-                            )
-                    })
-                }
-                .padding(.bottom, 64)
+                VStack{
+                    GradientButton(buttonTitle: "Dismiss & Signout", buttonAction: {signout()})
+                }.padding(.top,560)
+                    .padding(.horizontal)
+//                VStack {
+//                    Spacer()
+//                    Button(action: {
+//                        signout()
+//                    }, label: {
+//                        Image(systemName: "arrow.turn.up.forward.iphone.fill")
+//                            .foregroundColor(.white)
+//                            .font(.system(size: 15, weight: .medium, design: .rounded))
+//                            .rotation3DEffect(
+//                                Angle(degrees: 180),
+//                                axis: (x: 0.0, y: 0.0, z: 1.0)
+//                            )
+//                            .background(
+//                                Circle()
+//                                    .stroke(Color.white.opacity(0.2), lineWidth: 1)
+//                                    .frame(width: 42, height: 42, alignment: .center)
+//                                    .overlay(
+//                                        VisualEffectBlur(blurStyle: .dark)
+//                                            .cornerRadius(21)
+//                                            .frame(width: 42, height: 42, alignment: .center)
+//                                    )
+//                            )
+//                    })
+//                }
+//                .padding(.bottom, 64)
                 
                 
                 

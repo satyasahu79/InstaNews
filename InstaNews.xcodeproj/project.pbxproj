@@ -181,15 +181,14 @@
 		8A99CF0A283F9AD5002BE2D1 /* InstaNews */ = {
 			isa = PBXGroup;
 			children = (
+				8A99CF0B283F9AD5002BE2D1 /* InstaNewsApp.swift */,
 				8ABB3FE028497288009582F6 /* Onboarding */,
 				8A2D4F7828451FF6003675AE /* Info.plist */,
-				8A99CF0B283F9AD5002BE2D1 /* InstaNewsApp.swift */,
 				8ABB3FDB28497214009582F6 /* Code */,
 				8A99CF28283F9DEB002BE2D1 /* Views */,
 				8A99CF1F283F9C71002BE2D1 /* Components */,
 				8ABEB263284559DD00A3BB4F /* Blocks */,
 				8A99CF1E283F9C62002BE2D1 /* ViewModel */,
-				8ABB3FFF2849786F009582F6 /* PersistenceController.swift */,
 				8A99CF1D283F9C5A002BE2D1 /* Model */,
 				8A46CB5D284087350056CC7A /* Temp */,
 				8A99CF19283F9C0B002BE2D1 /* Navigation */,
@@ -253,6 +252,7 @@
 				8ABB3FCC28494BC2009582F6 /* ArticleQuery.graphql */,
 				8ABB3FD128495159009582F6 /* Network.swift */,
 				8ABB3FD328495208009582F6 /* ArticleViewModel.swift */,
+				8ABB3FFF2849786F009582F6 /* PersistenceController.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";

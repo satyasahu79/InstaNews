@@ -20,11 +20,13 @@ struct ArticleCardView: View {
             VStack(alignment: .leading, spacing: 16) {
                
                 HStack {
-                    Text(article.title)
-                        .foregroundColor(.primary)
-                        .font(.headline.weight(.semibold))
-                        .lineLimit(2)
-                    .frame(alignment: .leading)
+                    VStack(alignment:.leading) {
+                        Text(article.title)
+                            .foregroundColor(.primary)
+                            .font(.headline.weight(.semibold))
+                            .lineLimit(2)
+                        .frame(alignment: .leading)
+                    }
                     Spacer()
                 }
                 

@@ -11,7 +11,8 @@ struct BookmarksView: View {
     
     
     
-    var article : [Article] = bookmarkedArticles
+    var article : [Article]
+    var noOfArticles : Int = 0
     
     var body: some View {
         NavigationView {
@@ -24,23 +25,31 @@ struct BookmarksView: View {
                     ScrollView {
                         VStack{
                             
-                            if bookmarkedArticles.count == 0 {
-                                VStack(alignment:.center) {
-                                    Spacer()
-                                    Text("There are currently no bookmarked articles.\nPlease bookmark an article to view it here.")
-                                        .font(.subheadline)
-//                                        .padding(.vertical)
-                                    Spacer()
-                                }.frame(height : 500,alignment: .center)
-                                
-                            }   // if Ends
-                            else {
+//                            if bookmarkedArticles.count == 0 {
+//                                VStack(alignment:.center) {
+//                                    Spacer()
+//                                    Text("There are currently no bookmarked articles.\nPlease bookmark an article to view it here.")
+//                                        .font(.subheadline)
+////                                        .padding(.vertical)
+//                                    Spacer()
+//                                }.frame(height : 500,alignment: .center)
+//
+//                            }   // if Ends
+             
                                 VStack {
                                     ForEach(article) { item in
+                                        if item.isBookmarked {
+                                        NavigationLink {
+                                            ArticleDetailView(article: item)
+                                        } label: {
+                                            ArticleCardView(article: item)
+                                            Divider()
+                                        }
+
                                         
-                                        ArticleCardView(article: item)
-                                        Divider()
-                                        
+                                      
+                                          
+                                        }
                                         
                                     }   // For Each Ends
                                     
@@ -48,7 +57,7 @@ struct BookmarksView: View {
                                 } // VStack Ends
                                 .padding()
                             
-                            }   // Else Ends
+
                             
                            
                         }
@@ -63,6 +72,6 @@ struct BookmarksView: View {
 
 struct BookmarksView_Previews: PreviewProvider {
     static var previews: some View {
-        BookmarksView()
+        BookmarksView(article: [articlePreviewData])
     }
 }

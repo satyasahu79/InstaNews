@@ -74,6 +74,7 @@ struct ExploreView: View {
             
             .navigationTitle("Explore")
         }
+        
     }
 }
 
