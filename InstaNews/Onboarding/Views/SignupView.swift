@@ -64,7 +64,7 @@ struct SignupView: View {
                         Text(signupToggle ? "Sign up" : "Sign in")
                             .font(Font.largeTitle.bold())
                             .foregroundColor(.white)
-                        Text("Access to 120+ hours of courses, tutorials, and livestreams")
+                        Text("Add an account to access the best mobile application for personalised news.")
                             .font(.subheadline)
                             .foregroundColor(Color.white.opacity(0.7))
                         

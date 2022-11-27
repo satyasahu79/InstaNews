@@ -39,17 +39,17 @@ struct OnboardingView: View {
                             .font(.headline)
                             .fontWeight(.semibold)
         //                    .blendMode( colorScheme == .dark ? .overlay :  .overlay)
-                            .opacity(colorScheme == .light ? 0.5 : 0.5)
+                            .opacity(colorScheme == .light ? 0.5 : 0.8)
                             
                         
                         Spacer()
-//                        GradientButton(buttonTitle: "Get Started") {
-//                            withAnimation(.easeInOut) {
-//                                show.toggle()
-//                            }
-//
-//                        }.padding()
-//
+                        GradientButton(buttonTitle: "Get Started") {
+                            withAnimation(.easeInOut) {
+//                                .toggle()
+                            }
+
+                        }.padding()
+
                     
                     
                 }
